@@ -1,22 +1,27 @@
-# Improved DS-MITM Attacks on CRAFT via Dynamic Key-Dependent Distinguishers
+# Reducing the Memory Complexity of DS-MITM Attacks on CRAFT
 
-This repository contains the official source code for the paper: **"Improved DS-MITM Attacks on CRAFT via Dynamic Key-Dependent Distinguishers"**.
+This repository contains the source code accompanying the paper **“Reducing the Memory Complexity of DS-MITM Attacks on CRAFT.”**
 
-This project implements an automated search tool using Mixed-Integer Linear Programming (MILP) to find the optimal Deterministic Truncated Differential (DS) Meet-in-the-Middle (MITM) attacks on the CRAFT block cipher. 
+The paper introduces the Dynamic Key-Dependent Distinguisher (DKDD) technique to reduce the memory requirements of Demirci–Selçuk meet-in-the-middle (DS-MITM) attacks. The technique uses key information shared between the distinguisher and the key-recovery phase to construct smaller sequence tables.
 
-## 📁 Repository Structure
+This repository provides an automated search tool based on Mixed-Integer Linear Programming (MILP) for identifying DS-MITM attack configurations on CRAFT. The tool supports the attack constructions presented in the paper.
 
-* `craft_ds_mitm.py`: The main Python script containing the MILP model, constraints, and the automated search algorithm.
-* `requirements.txt`: The list of Python dependencies required to run the code.
-* `LICENSE`: The open-source license for this repository (MIT License).
+## Repository Structure
 
-## 🛠️ Prerequisites & Environment Setup
+- `craft_ds_mitm.py` — Main Python script containing the MILP model, constraints, and search procedure.
+- `requirements.txt` — Python dependencies.
+- `LICENSE` — MIT License.
 
-This code is written in Python 3 and relies heavily on the **Gurobi Optimizer** to solve the MILP models. 
+## Requirements and Setup
 
-### 1. Install Dependencies
-First, clone the repository and install the required Python packages:
+The tool requires Python 3 and the Gurobi Optimizer. A valid Gurobi license is required to solve models that exceed the limits of its restricted license.
+
+### Install Dependencies
+
+Clone the repository and install the required Python packages:
+
 ```bash
-git clone [https://github.com/Richard-Zhang-Crypto/CRAFT-DS-MITM.git](https://github.com/Richard-Zhang-Crypto/CRAFT-DS-MITM.git)
+git clone https://github.com/Richard-Zhang-Crypto/CRAFT-DS-MITM.git
 cd CRAFT-DS-MITM
 pip install -r requirements.txt
+```
